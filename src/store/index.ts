@@ -1,13 +1,15 @@
+/* eslint-disable prettier/prettier */
 import { configureStore } from '@reduxjs/toolkit'
+
 import carrinhoReducer from './reducers/carrinho'
-import favoritosReducer from './reducers/favoritos'
+import favoritoReducer from './reducers/favorito'
 
 import api from '../services/api'
 
 export const store = configureStore({
   reducer: {
     carrinho: carrinhoReducer,
-    favoritos: favoritosReducer,
+    favorito: favoritoReducer,
     [api.reducerPath]: api.reducer
   },
   middleware: (getDefaultMiddleware) =>

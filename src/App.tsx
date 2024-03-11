@@ -1,19 +1,28 @@
-import { useEffect, useState } from 'react'
+/* eslint-disable prettier/prettier */
+import { Provider } from 'react-redux'
 import Header from './components/Header'
 import Produtos from './containers/Produtos'
 
-import { GlobalStyle } from './styles'
-import { Provider } from 'react-redux'
 import { store } from './store'
 
-export type Produto = {
-  id: number
-  nome: string
-  preco: number
-  imagem: string
-}
+import { GlobalStyle } from './styles'
+import { ReactNode } from 'react'
 
-function App() {
+
+
+export type Produto = {
+  produto: any;
+  find(arg0: (fav: any) => boolean): unknown;
+  filter(arg0: (p: unknown) => boolean): unknown;
+  id: number;
+  nome: string;
+  preco: number;
+  imagem: string;
+};
+
+
+
+function App(): ReactNode {
   return (
     <Provider store={store}>
       <GlobalStyle />
@@ -22,7 +31,11 @@ function App() {
         <Produtos />
       </div>
     </Provider>
-  )
+  );
 }
 
-export default App
+  
+
+export default App;
+
+

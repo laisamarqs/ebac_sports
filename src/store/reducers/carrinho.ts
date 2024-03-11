@@ -1,4 +1,6 @@
+/* eslint-disable prettier/prettier */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
 import { Produto } from '../../App'
 
 type CarrinhoState = {
@@ -12,9 +14,8 @@ const initialState: CarrinhoState = {
 const carrinhoSlice = createSlice({
   name: 'carrinho',
   initialState,
-
   reducers: {
-    adicionar: (state, action: PayloadAction<Produto>) => {
+    adicionaCarrinho: (state, action: PayloadAction<Produto>) => {
       const produto = action.payload
 
       if (state.itens.find((p) => p.id === produto.id)) {
@@ -26,5 +27,6 @@ const carrinhoSlice = createSlice({
   }
 })
 
-export const { adicionar } = carrinhoSlice.actions
+export const { adicionaCarrinho } = carrinhoSlice.actions
+
 export default carrinhoSlice.reducer
