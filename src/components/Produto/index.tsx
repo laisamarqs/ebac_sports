@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+
 import { useDispatch } from 'react-redux'
 
 import { Produto as ProdutoType } from '../../App'
